@@ -1,6 +1,6 @@
-const req = require("express/lib/request");
-const res = require("express/lib/response");
-const Member = require('../models/memberModel')
+// const req = require("express/lib/request");
+// const res = require("express/lib/response");
+const Member = require('../models/memberModel');
 
 
 exports.getMembers = async (req, res) => {
@@ -39,7 +39,6 @@ exports.getMemberByName = async (req, res) => {
             
 exports.addMember= async (req,res)=>{
     try{
-        
             let member = new Member({
                 email:req.body.email,
                 password:req.body.password,
@@ -50,7 +49,9 @@ exports.addMember= async (req,res)=>{
                 address:req.body.address,
                 birthday:req.body.birthday
             });
+            member.password = await member.hashPassword(req.body.password);
             let createdMember = await member.save();
+
             res.status(200).json({
                 msg:"Register Success.",
                 data:createdMember

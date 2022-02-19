@@ -1,7 +1,7 @@
 const express = require('express');
-// const app = express.Router();
 const app = express.Router();
-const memberController = require('../controllers/memberController')
+const memberController = require('../controllers/memberController');
+const auth = require('../middleware/auth');
 
 app.get("/", memberController.getMembers);
 
