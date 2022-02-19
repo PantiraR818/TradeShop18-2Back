@@ -66,8 +66,12 @@ exports.addMember= async (req,res)=>{
 exports.editWholeMember = async (req, res) => {
         let member = {  //ข้อมูลใหม่
             name: req.body.name,
-            price: req.body.price,
-            unit_in_stock: req.body.unit_in_stock
+            tel: req.body.tel,
+            sex: req.body.sex,
+            birthday: req.body.birthday,
+            address: req.body.address,
+            email: req.body.email,
+            lineId : req.body.lineId
         };
         Member.findByIdAndUpdate(req.params.id, member)  //ระบุทั้ง id ที่ต้องการแก้ และข้อมูลใหม่
             .exec((err, result) => {

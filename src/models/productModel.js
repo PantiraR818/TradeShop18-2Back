@@ -10,14 +10,17 @@ const productSchema = new Schema({
     img: String,
 
     poster : {
-        postName: String,
-        postEmail: String,
-        postTel: String
+        name: String,
+        email: String,
+        tel: String
     },
+
     productStatus : Boolean ,
+
     category :{
         name : String
     },
+    
     traderRequest : [{
         requester : {
         requestName: String,
