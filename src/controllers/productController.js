@@ -73,8 +73,9 @@ exports.addProduct = async (req, res) => {
 exports.editWholeProduct = async (req, res) => {
     let product = {  //ข้อมูลใหม่
         name: req.body.name,
-        price: req.body.price,
-        unit_in_stock: req.body.unit_in_stock
+        category: req.body.category,
+        details: req.body.details,
+        img : req.body.img
     };
     Product.findByIdAndUpdate(req.params.id, product)  //ระบุทั้ง id ที่ต้องการแก้ และข้อมูลใหม่
         .exec((err, result) => {

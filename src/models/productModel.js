@@ -18,7 +18,7 @@ const productSchema = new Schema({
     productStatus : Boolean ,
 
     category :{
-        name : String
+        categoryname : String
     },
     
     traderRequest : [{
