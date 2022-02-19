@@ -1,5 +1,5 @@
-// const req = require("express/lib/request");
-// const res = require("express/lib/response");
+const req = require("express/lib/request");
+const res = require("express/lib/response");
 const Member = require('../models/memberModel');
 
 
@@ -89,12 +89,12 @@ exports.editWholeMember = async (req, res) => {
 
 exports.login = async (req, res) => {
     const login = {
-        email: req.body.email,
-        password: req.body.password
+        email : req.body.email,
+        password : req.body.password
     }
     try {
         let member = await Member.findOne({
-            email: login.email
+            email:login.email
         });
         // console.log(user);
         //check if user exit
@@ -122,7 +122,7 @@ exports.login = async (req, res) => {
         } else {
             res.status(400).json({
                 type: "Not Found",
-                msg: "Wrong Login Details"
+                msg: "Wrong Login Detaisdwsddddwls"
             })
         }
     } catch (err) {
