@@ -52,7 +52,7 @@ exports.addProduct = async (req, res) => {
             },
             productStatus : req.body.productStatus,
             category : {
-                name : req.body.name
+                categoryname : req.body.categoryname
             }
         });
         let createdProduct = await product.save();
@@ -73,7 +73,7 @@ exports.addProduct = async (req, res) => {
 exports.editWholeProduct = async (req, res) => {
     let product = {  //ข้อมูลใหม่
         name: req.body.name,
-        category: req.body.category,
+        categoryname: req.body.category,
         details: req.body.details,
         img : req.body.img
     };
